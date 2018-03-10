@@ -1,0 +1,40 @@
+# Project: ÏîÄ¿1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = genlib.o simpio.o strlib.o teach.o exception.o
+LINKOBJ  = genlib.o simpio.o strlib.o teach.o exception.o
+LIBS     = -L"C:/Program Files/Dev-Cpp/MinGW64/lib" -L"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files/Dev-Cpp/MinGW64/include" -I"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files/Dev-Cpp/MinGW64/include" -I"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 16-10.exe
+CXXFLAGS = $(CXXINCS) -std=gnu99 -g3
+CFLAGS   = $(INCS) -std=gnu99 -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+genlib.o: genlib.c
+	$(CC) -c genlib.c -o genlib.o $(CFLAGS)
+
+simpio.o: simpio.c
+	$(CC) -c simpio.c -o simpio.o $(CFLAGS)
+
+strlib.o: strlib.c
+	$(CC) -c strlib.c -o strlib.o $(CFLAGS)
+
+teach.o: teach.c
+	$(CC) -c teach.c -o teach.o $(CFLAGS)
+
+exception.o: exception.c
+	$(CC) -c exception.c -o exception.o $(CFLAGS)
