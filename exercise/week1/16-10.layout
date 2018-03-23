@@ -7,13 +7,13 @@ LeftChar=1
 Order=3,5,2,0
 Focused=3
 [Editor_3]
-CursorCol=11
-CursorRow=291
-TopLine=289
+CursorCol=6
+CursorRow=297
+TopLine=286
 LeftChar=1
 [Editor_5]
 CursorCol=1
-CursorRow=13
+CursorRow=21
 TopLine=1
 LeftChar=1
 [Editor_2]
